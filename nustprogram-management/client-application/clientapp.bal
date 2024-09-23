@@ -25,11 +25,11 @@ type Programme record {|
 public function main() returns error? {
     http:Client programmeClient = check new ("localhost:5000/programme");
 
-    io:println("================================================");
+    io:println("====================================================");
     io:println("      Welcome to NUST Programme Management");
-    io:println("================================================");
-    io:println("==============       2024        ==================");
-    io:println("===================Version 1.1==================");
+    io:println("====================================================");
+    io:println("==============       2024        ====================");
+    io:println("===================Version 1.1========================");
 
 // Start an infinite loop to display the menu and handle user input
 
