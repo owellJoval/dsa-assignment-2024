@@ -1,11 +1,15 @@
 import ballerina/io;
 import ballerina/http;
 
+// Define a record type 'Course' with fields: course name, course code (read-only), and NQF level
+
 type Course record {|
     string course_name;
     readonly string course_code;
     string nqf_level;
 |};
+
+// Define a record type 'Programme' with fields: code (read-only), NQF level, faculty, qualification title, registration date, and an array of 'Course' records
 
 type Programme record {|
     readonly string code;
@@ -16,6 +20,8 @@ type Programme record {|
     Course[] courses;
 |};
 
+// Main function to handle the programme management flow
+
 public function main() returns error? {
     http:Client programmeClient = check new ("localhost:5000/programme");
 
@@ -24,6 +30,8 @@ public function main() returns error? {
     io:println("================================================");
     io:println("==============       2024        ==================");
     io:println("===================Version 1.1==================");
+
+// Start an infinite loop to display the menu and handle user input
 
     while true {
         printMenu();
@@ -40,6 +48,9 @@ public function main() returns error? {
             "8" => { io:println("\nExiting Programme Management System."); break; }
             _ => { io:println("Invalid choice. Please try again."); }
         }
+
+ // Prompt user to press enter before returning to the menu
+
         io:println("\nPress Enter to continue...");
         _ = io:readln();
     }
