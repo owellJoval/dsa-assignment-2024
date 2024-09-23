@@ -25,7 +25,7 @@ type UserInfo record {|
     readonly string id;
     string name;
     string email;
-|};
+|}; //Option to enter user required user data
 
 table<ProductItem> key(id) productsTable = table [];
 table<CartInfo> key(user_id) cartsTable = table [];
