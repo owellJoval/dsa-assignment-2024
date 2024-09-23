@@ -59,7 +59,7 @@ document.getElementById('add-programme-form').addEventListener('submit', functio
     .catch(error => console.error('Error adding programme:', error));
 });
 
-// Delete a programme
+// Delete a Programme
 function deleteProgramme(code) {
     fetch(`${apiUrl}/delete/${code}`, { method: 'DELETE' })
         .then(response => response.text())
@@ -70,7 +70,7 @@ function deleteProgramme(code) {
         .catch(error => console.error('Error deleting programme:', error));
 }
 
-// Load programme data into the update form
+// Load Programme data into the update form
 function loadProgrammeForUpdate(code) {
     fetch(`${apiUrl}/code/${code}`)
         .then(response => response.json())
@@ -84,7 +84,7 @@ function loadProgrammeForUpdate(code) {
         .catch(error => console.error('Error fetching programme for update:', error));
 }
 
-// Update a programme
+// Update a Programme
 document.getElementById('update-programme-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
