@@ -14,7 +14,7 @@ service OnlineShoppingRESTStyle {
     rpc CreateUser (User) returns (UserResponse);
 }
 
-//model for client respoose
+//model for client response 
 
 message Product {
     string id = 1;
